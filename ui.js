@@ -31,8 +31,8 @@ $(async function () {
     evt.preventDefault();
 
     let name = $("#create-account-name").val();
-    let username = $("#create-account-username").val();
-    let password = $("#create-account-password").val();
+    let username = $("#create-account-username").val('testAcc');
+    let password = $("#create-account-password").val('password');
 
     const newUser = await User.create(username, password, name);
     currentUser = newUser;
