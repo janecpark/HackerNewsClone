@@ -17,8 +17,8 @@ $(async function () {
   $loginForm.on("submit", async function (evt) {
     evt.preventDefault();
 
-    const username = $("#login-username").val('testAcc');
-    const password = $("#login-password").val('password');
+    const username = $("#login-username").val();
+    const password = $("#login-password").val();
 
     const userInstance = await User.login(username, password);
     currentUser = userInstance;
@@ -273,7 +273,7 @@ $(async function () {
   function syncCurrentUserToLocalStorage() {
     if (currentUser) {
       localStorage.setItem("token", currentUser.loginToken);
-      localStorage.setItem("username", currentUser.username);
+      // localStorage.setItem("username", currentUser.username);
     }
   }
 });
