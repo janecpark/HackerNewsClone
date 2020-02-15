@@ -17,8 +17,8 @@ $(async function () {
   $loginForm.on("submit", async function (evt) {
     evt.preventDefault();
 
-    const username = $("#login-username").val();
-    const password = $("#login-password").val();
+    const username = $("#login-username").val('testAcc');
+    const password = $("#login-password").val('password');
 
     const userInstance = await User.login(username, password);
     currentUser = userInstance;
@@ -31,8 +31,8 @@ $(async function () {
     evt.preventDefault();
 
     let name = $("#create-account-name").val();
-    let username = $("#create-account-username").val('testAcc');
-    let password = $("#create-account-password").val('password');
+    let username = $("#create-account-username").val();
+    let password = $("#create-account-password").val();
 
     const newUser = await User.create(username, password, name);
     currentUser = newUser;
